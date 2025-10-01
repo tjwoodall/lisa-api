@@ -4992,7 +4992,11 @@ components:
       schema:
         pattern: ^Z([0-9]{4}|[0-9]{6})$
         type: string
-        example: Z1234 | Z123456
+      examples:
+        example-4:
+          value: Z1234
+        example-6:
+          value: Z123456
     accountId:
       name: accountId
       in: path
@@ -5073,7 +5077,7 @@ components:
           description: The reference given to the LISA provider when they applied for approval from HMRC.
           pattern: ^Z([0-9]{4}|[0-9]{6})$
           type: string
-          example: Z1234 | Z123456
+          example: Z1234
         _links:
           type: object
     error-codeType:
@@ -5166,7 +5170,7 @@ components:
       type: object
       properties:
         investorNINO:
-          pattern: ^[A-Z]{2}\\d{6}[A-D]$
+          pattern: ^[A-Z]{2}\d{6}[A-D]$
           type: string
           description: The investor’s National Insurance number.
           example: BC123456D
