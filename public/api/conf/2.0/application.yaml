@@ -156,7 +156,7 @@ paths:
                   $ref: '#/components/examples/notOpenStatusUnauthorized'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/investors:
     post:
@@ -413,7 +413,7 @@ paths:
                     message: The investor already has a record with HMRC.
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts:
     post:
@@ -1024,7 +1024,7 @@ paths:
                 accountId: '1234567890'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/reinstate-account:
     post:
@@ -1311,7 +1311,7 @@ paths:
                     message: You cannot reinstate this account because the investor has failed a compliance check
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}:
     get:
@@ -1627,7 +1627,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/close-account:
     post:
@@ -2008,7 +2008,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/update-subscription:
     post:
@@ -2349,7 +2349,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/events:
     post:
@@ -2723,7 +2723,7 @@ paths:
                   $ref: '#/components/examples/lifeEventExists'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/events/annual-returns:
     post:
@@ -3339,7 +3339,7 @@ paths:
                   $ref: '#/components/examples/lifeEventExists'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/events/fund-releases:
     post:
@@ -4045,7 +4045,7 @@ paths:
                   $ref: '#/components/examples/lifeEventExists'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/events/purchase-extensions:
     post:
@@ -4742,7 +4742,7 @@ paths:
                   $ref: '#/components/examples/supersedingLifeEventAlreadySuperseded'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/events/purchase-outcomes:
     post:
@@ -5167,7 +5167,7 @@ paths:
                   $ref: '#/components/examples/lifeEventExists'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/events/{lifeEventId}:
     get:
@@ -5775,7 +5775,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/withdrawal-charges:
     post:
@@ -6604,7 +6604,7 @@ paths:
                     transactionId: '2345678901'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/withdrawal-charges/{transactionId}:
     get:
@@ -6872,7 +6872,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/transactions:
     post:
@@ -8253,7 +8253,7 @@ paths:
                     message: This bonus claim has already been superseded
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/transactions/{transactionId}:
     get:
@@ -8608,7 +8608,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/transactions/{transactionId}/payments:
     get:
@@ -8869,7 +8869,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/payments:
     get:
@@ -9236,7 +9236,7 @@ paths:
                     message: No payments or debts exist for this date range
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
 components:
   parameters:
@@ -9332,7 +9332,7 @@ components:
         type: string
         example: '1234567890'
   securitySchemes:
-    user-restricted:
+    User-Restricted:
       type: oauth2
       description: HMRC supports OAuth 2.0 for authenticating [user-restricted](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/user-restricted-endpoints) API requests using an OAuth 2.0 Bearer Token in the Authorization header.
       flows:
