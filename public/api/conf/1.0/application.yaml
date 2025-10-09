@@ -84,7 +84,7 @@ paths:
                 notOpenStatus:
                   $ref: '#/components/examples/notOpenStatusUnauthorized'
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
 
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/investors:
@@ -341,7 +341,7 @@ paths:
                     message: The investor already has a record with HMRC.
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts:
     post:
@@ -950,7 +950,7 @@ paths:
                 accountId: '1234567890'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/reinstate-account:
     post:
@@ -1237,7 +1237,7 @@ paths:
                     message: You cannot reinstate this account because the investor has failed a compliance check
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}:
     get:
@@ -1553,7 +1553,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/close-account:
     post:
@@ -1934,7 +1934,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/update-subscription:
     post:
@@ -2273,7 +2273,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/events:
     post:
@@ -2643,7 +2643,7 @@ paths:
                   $ref: '#/components/examples/lifeEventExists'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/transactions:
     post:
@@ -3990,7 +3990,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - write:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/transactions/{transactionId}:
     get:
@@ -4326,7 +4326,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/accounts/{accountId}/transactions/{transactionId}/payments:
     get:
@@ -4583,7 +4583,7 @@ paths:
                   $ref: '#/components/examples/accountIdNotFound'
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
   /lifetime-isa/manager/{lisaManagerReferenceNumber}/payments:
     get:
@@ -4950,7 +4950,7 @@ paths:
                     message: No bonus payments have been made for this date range
       deprecated: false
       security:
-        - user-restricted:
+        - User-Restricted:
             - read:lisa
 components:
   parameters:
@@ -5050,7 +5050,7 @@ components:
         type: string
         example: '1234567890'
   securitySchemes:
-    user-restricted:
+    User-Restricted:
       type: oauth2
       description: HMRC supports OAuth 2.0 for authenticating [user-restricted](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/user-restricted-endpoints) API requests using an OAuth 2.0 Bearer Token in the Authorization header.
       flows:
